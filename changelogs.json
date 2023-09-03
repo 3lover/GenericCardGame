@@ -1,0 +1,26 @@
+[
+    [
+        {
+            "metadata": "Commit Title/Short Explanation",
+            "classes": ["changelogbasic", "changelogheader"],
+            "content": "Options Menu"
+        },
+        {
+            "metadata": "1st commit",
+            "classes": ["changelogbasic", "changelogbody"],
+            "content": "Created an options menu to the game. Includes:<br>- Sound/SFX volume controls<br>- Transition time control<br>- Theme color and font control"
+        }
+    ],
+    [
+        {
+            "metadata": "Commit Title/Short Explanation",
+            "classes": ["changelogbasic", "changelogheader"],
+            "content": "Changelogs"
+        },
+        {
+            "metadata": "1st commit",
+            "classes": ["changelogbasic", "changelogbody"],
+            "content": "Created a menu for the game's changelogs with basic functionality"
+        }
+    ]
+]

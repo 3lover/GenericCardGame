@@ -1,0 +1,373 @@
+:root {
+	--black: #222222;
+	--selectblack: #333333;
+	--borderwhite: #dddddd;
+	--purewhite: #ffffff;
+	--grey: #444444;
+	--error: #ff0000;
+
+	--transition-time: 1s;
+	--font: JetBrains Mono;
+}
+
+* {
+	z-index: 5;
+	transition: transform var(--transition-time), opacity 0s;
+	padding: 0;
+	margin: 0;
+	opacity: 1;
+	overflow: hidden;
+	box-sizing: border-box;
+	font-family: var(--font);
+}
+
+html {
+	overflow: hidden;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	display: grid;
+  	grid-template-columns: 1fr repeat(10, 10vmin) 1fr;
+  	grid-template-rows: 1fr repeat(10, 10vmin) 1fr;
+	background-color: var(--black);
+	overflow: hidden;
+	height: 100%;
+}
+
+a {
+	color: var(--purewhite);
+}
+
+img {
+	user-select: none;
+}
+
+svg {
+	fill: var(--purewhite);
+}
+
+hr {
+	border-color: var(--purewhite);
+}
+
+select {
+	background-color: var(--black);
+	border-style: solid;
+	border-color: var(--borderwhite);
+	border-width: 0.5vmin;
+	color: var(--purewhite);
+}
+
+.titletext {
+	grid-area: 3 / 2 / span 1 / span 10;
+	background-color: transparent;
+	color: var(--purewhite);
+	font-size: 8vmin;
+	text-align: center;
+	transform: scale(1);
+	cursor: pointer;
+	user-select: none;
+}
+.titletext:hover {
+	transform: scale(1.1);
+}
+
+.topleftbutton {
+	position: absolute;
+	top: 2vmin;
+	left: 2vmin;
+	width: 5vmin;
+	height: 5vmin;
+	cursor: pointer;
+}
+.topleftbutton:hover {
+	transform: scale(1.2);
+}
+.topleftbutton:active {
+	transform: scale(1.1);
+}
+
+.infotext {
+	grid-area: 3 / 2 / span 9 / span 10;
+}
+
+.centerheader {
+	color: var(--purewhite);
+	font-size: 5vmin;
+	text-align: center;
+}
+.centertext {
+	color: var(--purewhite);
+	font-size: 3vmin;
+	text-align: center;
+}
+.pagebottom {
+	bottom: 5vmin;
+}
+
+.card {
+	display: grid;
+	grid-template-columns: repeat(5, 12vmin);
+  	grid-template-rows: repeat(7, 12vmin);
+	position: absolute;
+	left: calc(50vw - 30vmin);
+	bottom: -30vmin;
+	width: 60vmin;
+	height: 80vmin;
+	text-align: center;
+	font-size: 8vmin;
+	background-color: var(--black);
+	color: var(--purewhite);
+	border-color: var(--borderwhite);
+	border-style: solid;
+	border-width: 1vmin;
+	transform: scale(1);
+	cursor: pointer;
+	user-select: none;
+}
+.card:hover {
+	transform: scale(1.05) translate(0, -3vmin);
+	border-color: var(--purewhite);
+}
+.card:active {
+	transform: scale(1) translate(0, -5vmin);
+	background-color: var(--selectblack);
+	border-color: var(--purewhite);
+}
+
+.changelogcard {
+	rotate: 15deg;
+	left: calc(50vw + 10vmin);
+	z-index: 4;
+}
+
+.optionscard {
+	rotate: -15deg;
+	left: calc(50vw - 70vmin);
+	z-index: 4;
+}
+
+.cardcontent {
+	grid-area: 1 / 1 / span 1 / span 7;
+	margin: 0;
+	padding: 0;
+}
+
+.cardimage {
+	object-fit: contain;
+	grid-area: 2 / 2 / span 3 / span 3;
+	width: 36vmin;
+	height: 36vmin;
+}
+
+.contentbox {
+	grid-area: 4 / 2 / span 6 / span 10;
+	border-style: solid;
+	border-color: var(--borderwhite);
+	border-width: 0.5vmin 0 0.5vmin 0;
+	overflow-y: scroll;
+}
+
+.changelogbasic {
+	background-color: transparent;
+	color: var(--purewhite);
+}
+.changelogheader {
+	font-size: 8vmin;
+}
+.changelogbody {
+	font-size: 5vmin;
+}
+
+.optionsbackbutton {
+	padding-top: 1vmin;
+	padding-left: 1vmin;
+	grid-area: 3 / 2 / span 1 / span 1;
+	width: 8vmin;
+	height: 8vmin;
+	cursor: pointer;
+}
+.optionsbackbutton:hover {
+	transform: scale(1.05);
+}
+.optionsbackbutton:active {
+	transform: scale(1);
+}
+
+.optionheader {
+	color: var(--purewhite);
+	font-size: 7vmin;
+	text-align: center;
+	background-color: var(--grey);
+	width: 100vmin;
+	margin-top: 4vmin;
+}
+
+.optionstitle {
+	grid-area: 3 / 4 / span 1 / span 6;
+	color: var(--purewhite);
+	font-size: 8vmin;
+	text-align: center;
+}
+
+.sliderholder {
+	margin-top: 2vmin;
+	width: 98vmin;
+	height: 16vmin;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.slidertext {
+	color: var(--purewhite);
+	font-size: 6vmin;
+	border-color: var(--borderwhite);
+	border-style: solid;
+	border-width: 0.5vmin;
+	width: 75vmin;
+	height: 8vmin;
+}
+.sliderinput {
+	color: var(--purewhite);
+	font-size: 6vmin;
+	border-color: var(--borderwhite);
+	border-style: solid;
+	border-width: 0.5vmin;
+	width: 15vmin;
+	height: 8vmin;
+	background-color: var(--black);
+}
+
+.generaloptionholder {
+	width: 100vmin;
+	display: flex;
+	justify-content: center;
+}
+
+.optionselect {
+	width: 80vmin;
+	height: 10vmin;
+	font-size: 6vmin;
+}
+
+/* have custom sliders */
+
+.sliderbar {
+	appearance: none;
+	width: 80vmin;
+	height: 5vmin;
+	background: var(--selectblack);
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+  
+.sliderbar:hover {
+	opacity: 1;
+}
+  
+.sliderbar::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 5vmin;
+	height: 5vmin;
+	background: var(--purewhite);;
+	cursor: pointer;
+}
+  
+.sliderbar::-moz-range-thumb {
+	width: 5vmin;
+	height: 5vmin;
+	background: var(--purewhite);
+	cursor: pointer;
+}
+
+/* pulled directly from stack overflow for the sliders */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 5vmin;
+      -webkit-appearance: none;
+      color: var(--purewhite);
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 5vmin;
+      -webkit-appearance: none;
+      height: 5vmin;
+      cursor: ew-resize;
+      background: var(--borderwhite);
+      box-shadow: -85vmin 0 0 85vmin var(--purewhite);
+    }
+
+}
+input[type="range"]::-moz-range-progress {
+  background-color: var(--purewhite); 
+}
+input[type="range"]::-ms-fill-lower {
+  background-color: var(--purewhite); 
+}
+
+/* have custom scroll bars */
+::-webkit-scrollbar {
+	width: 2vmin;
+	background-color: var(--selectblack);
+}
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 0.5vmin var(--selectblack);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--purewhite);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--borderwhite); 
+}
+
+/* disable spinbox on number inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  appearance: textfield;
+}
+
+/* do some janky things with specificity to make these more important css traits */
+.redtext {
+	color: var(--error);
+}
+.offpageLeft.offpageLeft {
+	transform: translate(-150vmin, 0);
+	opacity: 0;
+	transition: transform var(--transition-time), opacity var(--transition-time);
+}
+.offpageRight.offpageRight {
+	transform: translate(150vmin, 0);
+	opacity: 0;
+	transition: transform var(--transition-time), opacity var(--transition-time);
+}
+.offpageBottom.offpageBottom {
+	transform: translate(0, 150vmin);
+	opacity: 0;
+	transition: transform var(--transition-time), opacity var(--transition-time);
+}
+.offpageTop.offpageTop {
+	transform: translate(0, -150vmin);
+	opacity: 0;
+	transition: transform var(--transition-time), opacity var(--transition-time);
+}
+.slightOffpageBottom.slightOffpageBottom {
+	transform: translate(0, 50vmin);
+	opacity: 0;
+	transition: transform var(--transition-time), opacity var(--transition-time);
+}
+.slightOffpageTop.slightOffpageTop {
+	transform: translate(0, -50vmin);
+	opacity: 0;
+	transition: transform var(--transition-time), opacity var(--transition-time);
+}
