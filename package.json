@@ -1,0 +1,26 @@
+{
+  "name": "generic-card-game",
+  "version": "1.0.0",
+  "description": "A tabletop simulator that allows you to customize the table, deck, and objects",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "tabletop",
+    "card",
+    "game",
+    "simulation"
+  ],
+  "author": "3love",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "latest",
+    "express": "latest",
+    "express-ws": "latest",
+    "node-fetch": "^3.2.6"
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}
