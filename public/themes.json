@@ -42,7 +42,7 @@
 	"error": {
 		"--black": "#000000",
 		"--selectblack": "#444444",
-		"--borderwhite": "#00dd00",
+		"--borderwhite": "#dd0000",
 		"--purewhite": "#ff0000",
 		"--grey": "#663333",
 		"--error": "#00ff00"
@@ -56,12 +56,12 @@
 		"--error": "#ffdddd"
 	},
 	"sunset": {
-		"--black": "#8f5f00",
-		"--selectblack": "#663300",
+		"--black": "#330000",
+		"--selectblack": "#660000",
 		"--borderwhite": "#0066aa",
 		"--purewhite": "#0099ee",
 		"--grey": "#880000",
-		"--error": "#00ff00"
+		"--error": "#ffffff"
 	},
 	"midnight": {
 		"--black": "#000000",
