@@ -23,6 +23,8 @@ const e = {
 	musicVolumeSlider: GE("musicvolumeslider"),
 	themeSelector: GE("themeselector"),
 	fontSelector: GE("fontselector"),
+	transitionInput: GE("transitioninput"),
+	transitionSlider: GE("transitionslider"),
 
 	changelogBackButton: GE("changelogbackbutton"),
 	changelogsTitle: GE("changelogstitle"),
@@ -35,7 +37,7 @@ const settings = {
 	pwettyWainbowMode: false,
 	theme: localStorage.getItem("theme") ?? "night",
 	font: localStorage.getItem("font") ?? "JetBrains Mono",
-	transitionTime: 1000,
+	transitionTime: localStorage.getItem("transitiontime") ?? 1000,
 	sfxVolume: localStorage.getItem("sfxvolume") ?? 50,
 	musicVolume: localStorage.getItem("musicvolume") ?? 50,
 }
@@ -46,6 +48,8 @@ e.musicVolumeSlider.value = settings.musicVolume;
 e.sfxVolumeSlider.value = settings.sfxVolume;
 e.themeSelector.value = settings.theme;
 e.fontSelector.value = settings.font;
+e.transitionInput.value = settings.transitionTime;
+e.transitionSlider.value = settings.transitionTime;
 
 const data = {
 	themeKeys: null,
@@ -61,6 +65,7 @@ function randomHex() {
 async function getThemes() {
 	data.themes = await (await fetch("./themes.json")).json();
 	adjustTheme(settings.theme);
+	transition("frontpage", true);
 }
 function adjustTheme(theme) {
 	if (!Object.keys(data.themes).includes(theme)) return;
@@ -187,10 +192,12 @@ e.changelogsCard.addEventListener("click", function(event) {
 });
 
 // entangle the sliders and their inputs to each other
-function entangleSlider(slider, input, storage) {
+function entangleSlider(slider, input, storage, setting, callback = () => {}) {
 	slider.addEventListener("input", function(event) {
 		input.value = slider.value;
 		localStorage.setItem(storage, slider.value);
+		setting = slider.value;
+		callback(setting);
 	});
 	input.addEventListener("input", function(event) {
 		let ifloat = parseFloat(input.value);
@@ -203,6 +210,8 @@ function entangleSlider(slider, input, storage) {
 			input.value = Math.min(Math.max(slider.min, parseFloat(input.value)), slider.max);
 		slider.value = input.value;
 		localStorage.setItem(storage, slider.value);
+		setting = slider.value;
+		callback(setting);
 	});
 	input.addEventListener("change", function(event) {
 		input.value = slider.value;
@@ -212,6 +221,11 @@ function entangleSlider(slider, input, storage) {
 
 entangleSlider(e.sfxVolumeSlider, e.sfxVolumeInput, "sfxvolume");
 entangleSlider(e.musicVolumeSlider, e.musicVolumeInput, "musicvolume");
+entangleSlider(e.transitionSlider, e.transitionInput, "transitiontime", settings.transitionTime, function(transitionTime) {
+	settings.transitionTime = transitionTime;
+	e.root.style.setProperty("--transition-time", `${settings.transitionTime}ms`);
+});
+e.root.style.setProperty("--transition-time", `${settings.transitionTime}ms`);
 
 // when you change the theme bars, save it and swap the theme out
 e.themeSelector.addEventListener("change", function(event) {
@@ -227,39 +241,8 @@ e.fontSelector.addEventListener("change", function(event) {
 e.root.style.setProperty("--font", settings.font);
 
 // create changelogs for the game
-data.changelogs = [
-    [
-        {
-            "metadata": "Commit Title/Short Explanation",
-            "classes": ["changelogbasic", "changelogheader"],
-            "content": ["Options Menu"]
-        },
-        {
-            "metadata": "1st commit",
-            "classes": ["changelogbasic", "changelogbody"],
-            "content": [
-				"Created an options menu for the game. Includes:",
-				"- Sound/SFX volume controls",
-				"- Transition time control",
-				"- Theme color and font control"
-			]
-        }
-    ],
-    [
-        {
-            "metadata": "Commit Title/Short Explanation",
-            "classes": ["changelogbasic", "changelogheader"],
-            "content": ["Changelogs"]
-        },
-        {
-            "metadata": "1st commit",
-            "classes": ["changelogbasic", "changelogbody"],
-            "content": ["Created a menu for the game's changelogs with basic functionality"]
-        }
-    ]
-];
-
-function createLogs() {
+async function createLogs() {
+	data.changelogs = await (await fetch("./changelogs.json")).json();
 	for (let v of data.changelogs) {
 		for (let c of v) {
 			const node = document.createElement("p");

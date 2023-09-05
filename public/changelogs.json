@@ -1,26 +1,64 @@
 [
     [
         {
-            "metadata": "Commit Title/Short Explanation",
-            "classes": ["changelogbasic", "changelogheader"],
-            "content": "Options Menu"
+            "metadata": "The Options Changelog Section",
+            "classes": ["changelogbasic", "changelogheader", "changelogtopline"],
+            "content": ["Options Menu"]
+        },
+
+        {
+            "metadata": "1st Options Menu commit",
+            "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
+            "content": ["9/1/23"]
         },
         {
-            "metadata": "1st commit",
             "classes": ["changelogbasic", "changelogbody"],
-            "content": "Created an options menu to the game. Includes:<br>- Sound/SFX volume controls<br>- Transition time control<br>- Theme color and font control"
+            "content": [
+				"Created an options menu for the game. Includes:",
+				"- Sound/SFX volume controls",
+				"- Transition time control",
+				"- Theme color and font control"
+			]
+        },
+
+        {
+            "metadata": "2nd Options Menu commit",
+            "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
+            "content": ["9/5/23"]
+        },
+        {
+            "classes": ["changelogbasic", "changelogbody", "changelognewhighlight"],
+            "content": [
+				"A new option was added to change the transition time when moving between and on menus"
+			]
         }
+
     ],
     [
         {
-            "metadata": "Commit Title/Short Explanation",
-            "classes": ["changelogbasic", "changelogheader"],
-            "content": "Changelogs"
+            "metadata": "The changelog Changelog Section",
+            "classes": ["changelogbasic", "changelogheader", "changelogtopline"],
+            "content": ["Changelogs"]
+        },
+
+        {
+            "metadata": "1st Changelogs commit",
+            "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
+            "content": ["9/1/23"]
         },
         {
-            "metadata": "1st commit",
             "classes": ["changelogbasic", "changelogbody"],
-            "content": "Created a menu for the game's changelogs with basic functionality"
+            "content": ["Created a menu for the game's changelogs with basic functionality"]
+        },
+
+        {
+            "metadata": "2nd Changelogs commit",
+            "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
+            "content": ["9/5/23"]
+        },
+        {
+            "classes": ["changelogbasic", "changelogbody", "changelognewhighlight"],
+            "content": ["Changelogs now read better, with new dotted and solid horizontal borders between logs, and highlights on the newest content for each section"]
         }
     ]
 ]

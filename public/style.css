@@ -6,7 +6,7 @@
 	--grey: #444444;
 	--error: #ff0000;
 
-	--transition-time: 1s;
+	--transition-time: 1000ms;
 	--font: JetBrains Mono;
 }
 
@@ -180,6 +180,18 @@ select {
 }
 .changelogbody {
 	font-size: 5vmin;
+}
+.changelogbold {
+	font-weight: bold;
+}
+.changelogtopline {
+	border-top: 0.25vmin var(--borderwhite) solid;
+}
+.changelogtoplinedotted {
+	border-top: 0.25vmin var(--borderwhite) dotted;
+}
+.changelognewhighlight {
+	background-color: var(--selectblack);
 }
 
 .optionsbackbutton {
