@@ -1,6 +1,28 @@
 [
     [
         {
+            "metadata": "Summary Section",
+            "classes": ["changelogbasic", "changelogheader", "changelogtopline"],
+            "content": ["General Changes"]
+        },
+
+        {
+            "date": "9/6/2023",
+            "metadata": "1st general change",
+            "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
+            "content": ["9/6/2023"]
+        },
+        {
+            "date": "9/6/2023",
+            "classes": ["changelogbasic", "changelogbody"],
+            "content": [
+				"- Worked on the bare bones of the game finder",
+				"- Fixed a bug with back buttons being clicked twice crashing the game"
+			]
+        }
+    ],
+    [
+        {
             "metadata": "The Game Finder Changelog Section",
             "classes": ["changelogbasic", "changelogheader", "changelogtopline"],
             "content": ["Game Finder Menu"]
@@ -8,7 +30,7 @@
 
         {
             "date": "9/6/2023",
-            "metadata": "1st Game Finder commit date",
+            "metadata": "1st Game Finder commit",
             "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
             "content": ["9/6/2023"]
         },
@@ -31,7 +53,7 @@
 
         {
             "date": "9/1/2023",
-            "metadata": "1st Options Menu commit date",
+            "metadata": "1st Options Menu commit",
             "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
             "content": ["9/1/2023"]
         },
@@ -48,7 +70,7 @@
 
         {
             "date": "9/5/2023",
-            "metadata": "2nd Options Menu commit date",
+            "metadata": "2nd Options Menu commit",
             "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
             "content": ["9/5/2023"]
         },
@@ -68,7 +90,7 @@
 
         {
             "date": "9/1/2023",
-            "metadata": "1st Changelogs commit date",
+            "metadata": "1st Changelogs commit",
             "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
             "content": ["9/1/2023"]
         },
@@ -80,7 +102,7 @@
 
         {
             "date": "9/5/2023",
-            "metadata": "2nd Changelogs commit date",
+            "metadata": "2nd Changelogs commit",
             "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
             "content": ["9/5/2023"]
         },

@@ -162,6 +162,7 @@ function transition(type, state, removeHistory = false) {
 
 // when a button with the backbutton class is pressed, return to the last page in our history
 function backAPage() {
+	if (data.pageHistory.length <= 1) return;
 	transition(data.pageHistory[data.pageHistory.length - 1], false, true);
 	transition(data.pageHistory[data.pageHistory.length - 1], true);
 }
