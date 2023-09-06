@@ -57,6 +57,9 @@ e.transitionInput.value = settings.transitionTime;
 e.transitionSlider.value = settings.transitionTime;
 
 const data = {
+	themedata: null,
+	fonts: null,
+	themes: null,
 	themeKeys: null,
 	themeValues: null,
 	pageHistory: ["frontpage"],
@@ -68,8 +71,11 @@ function randomHex() {
 }
 
 async function getThemes() {
-	data.themes = await (await fetch("./themes.json")).json();
+	data.themedata = await (await fetch("./themes.json")).json();
+	data.themes = data.themedata.themes;
+	data.fonts = data.themedata.fonts;
 	adjustTheme(settings.theme);
+	adjustFont(settings.font);
 	transition("frontpage", true);
 }
 function adjustTheme(theme) {
@@ -78,6 +84,11 @@ function adjustTheme(theme) {
 	data.themeKeys = Object.keys(data.themes[settings.theme]);
 	data.themeValues = Object.values(data.themes[settings.theme]);
 	scrambleColors(theme);
+}
+function adjustFont(font) {
+	if (!Object.keys(data.fonts).includes(font)) return;
+	settings.font = font;
+	e.root.style.setProperty("--font", data.fonts[font]);
 }
 getThemes();
 
@@ -244,11 +255,10 @@ e.themeSelector.addEventListener("change", function(event) {
 });
 
 e.fontSelector.addEventListener("change", function(event) {
-	e.root.style.setProperty("--font", event.target.value);
+	adjustFont(event.target.value);
 	localStorage.setItem("font", event.target.value);
 	settings.font = event.target.value;
 });
-e.root.style.setProperty("--font", settings.font);
 
 // create changelogs for the game
 async function createLogs() {
