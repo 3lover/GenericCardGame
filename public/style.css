@@ -191,7 +191,7 @@ select {
 	border-top: 0.25vmin var(--borderwhite) dotted;
 }
 .changelognewhighlight {
-	background-color: var(--selectblack);
+	background-color: var(--grey);
 }
 
 .optionsbackbutton {
@@ -203,7 +203,7 @@ select {
 	cursor: pointer;
 }
 .optionsbackbutton:hover {
-	transform: scale(1.05);
+	transform: scale(1.1);
 }
 .optionsbackbutton:active {
 	transform: scale(1);
@@ -283,7 +283,7 @@ select {
 	cursor: pointer;
 }
 .gamefinderfilterbutton:hover {
-	transform: scale(1.05);
+	transform: scale(1.1);
 }
 .gamefinderfilterbutton:active {
 	transform: scale(1);
