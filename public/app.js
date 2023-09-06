@@ -33,6 +33,7 @@ const e = {
 	gameFinderMenu: GE("gamefindermenu"),
 	gameFinderBackButton: GE("gamefinderbackbutton"),
 	gameFinderTitle: GE("gamefindertitle"),
+	gameFinderFilterButton: GE("gamefinderfilterbutton"),
 
 	root: document.documentElement,
 }
@@ -144,6 +145,7 @@ function transition(type, state, removeHistory = false) {
 			e.gameFinderBackButton.classList[state ? "remove" : "add"]("slightOffpageTop");
 			e.gameFinderTitle.classList[state ? "remove" : "add"]("offpageTop");
 			e.gameFinderMenu.classList[state ? "remove" : "add"]("offpageBottom");
+			e.gameFinderFilterButton.classList[state ? "remove" : "add"]("slightOffpageTop");
 			break;
 		}
 		case "changelogspage": {
