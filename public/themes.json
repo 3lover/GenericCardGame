@@ -6,7 +6,9 @@
 		"courier": "Courier, monospace",
 		"arialb": "arial black, sans-serif",
 		"luminari": "Luminari,fantasy",
-		"comic": "Comic Sans,cursive"
+		"comic": "Comic Sans,cursive",
+		"verdana": "Verdana, sans-serif",
+		"brush": "Brush Script MT, cursive"
 	},
 	"themes": {
 		"night": {
