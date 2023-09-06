@@ -1,17 +1,42 @@
 [
     [
         {
+            "metadata": "The Game Finder Changelog Section",
+            "classes": ["changelogbasic", "changelogheader", "changelogtopline"],
+            "content": ["Game Finder Menu"]
+        },
+
+        {
+            "date": "9/6/2023",
+            "metadata": "1st Game Finder commit date",
+            "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
+            "content": ["9/6/2023"]
+        },
+        {
+            "date": "9/6/2023",
+            "classes": ["changelogbasic", "changelogbody"],
+            "content": [
+				"Began developement on a game finder. Current progress includes:",
+				"- A basic menu, complete with premade future plans for the UI",
+				"- A title and back button, meaning it is now impossible to easily softlock the game"
+			]
+        }
+    ],
+    [
+        {
             "metadata": "The Options Changelog Section",
             "classes": ["changelogbasic", "changelogheader", "changelogtopline"],
             "content": ["Options Menu"]
         },
 
         {
-            "metadata": "1st Options Menu commit",
+            "date": "9/1/2023",
+            "metadata": "1st Options Menu commit date",
             "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
-            "content": ["9/1/23"]
+            "content": ["9/1/2023"]
         },
         {
+            "date": "9/1/2023",
             "classes": ["changelogbasic", "changelogbody"],
             "content": [
 				"Created an options menu for the game. Includes:",
@@ -22,15 +47,15 @@
         },
 
         {
-            "metadata": "2nd Options Menu commit",
+            "date": "9/5/2023",
+            "metadata": "2nd Options Menu commit date",
             "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
-            "content": ["9/5/23"]
+            "content": ["9/5/2023"]
         },
         {
-            "classes": ["changelogbasic", "changelogbody", "changelognewhighlight"],
-            "content": [
-				"A new option was added to change the transition time when moving between and on menus"
-			]
+            "date": "9/5/2023",
+            "classes": ["changelogbasic", "changelogbody"],
+            "content": ["A new option was added to change the transition time when moving between and on menus"]
         }
 
     ],
@@ -42,22 +67,26 @@
         },
 
         {
-            "metadata": "1st Changelogs commit",
+            "date": "9/1/2023",
+            "metadata": "1st Changelogs commit date",
             "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
-            "content": ["9/1/23"]
+            "content": ["9/1/2023"]
         },
         {
+            "date": "9/1/2023",
             "classes": ["changelogbasic", "changelogbody"],
             "content": ["Created a menu for the game's changelogs with basic functionality"]
         },
 
         {
-            "metadata": "2nd Changelogs commit",
+            "date": "9/5/2023",
+            "metadata": "2nd Changelogs commit date",
             "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
-            "content": ["9/5/23"]
+            "content": ["9/5/2023"]
         },
         {
-            "classes": ["changelogbasic", "changelogbody", "changelognewhighlight"],
+            "date": "9/5/2023",
+            "classes": ["changelogbasic", "changelogbody"],
             "content": ["Changelogs now read better, with new dotted and solid horizontal borders between logs, and highlights on the newest content for each section"]
         }
     ]

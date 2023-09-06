@@ -266,6 +266,14 @@ select {
 	font-size: 6vmin;
 }
 
+.gamefindermenu {
+	grid-area: 4 / 2 / span 6 / span 10;
+	border-style: solid;
+	border-color: var(--borderwhite);
+	border-width: 0.5vmin 0 0.5vmin 0;
+	overflow-y: scroll;
+}
+
 /* have custom sliders */
 
 .sliderbar {

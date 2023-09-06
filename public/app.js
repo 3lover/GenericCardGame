@@ -30,6 +30,10 @@ const e = {
 	changelogsTitle: GE("changelogstitle"),
 	changelogBox: GE("changelogbox"),
 
+	gameFinderMenu: GE("gamefindermenu"),
+	gameFinderBackButton: GE("gamefinderbackbutton"),
+	gameFinderTitle: GE("gamefindertitle"),
+
 	root: document.documentElement,
 }
 
@@ -137,6 +141,9 @@ function transition(type, state, removeHistory = false) {
 			break;
 		}
 		case "playagamepage": {
+			e.gameFinderBackButton.classList[state ? "remove" : "add"]("slightOffpageTop");
+			e.gameFinderTitle.classList[state ? "remove" : "add"]("offpageTop");
+			e.gameFinderMenu.classList[state ? "remove" : "add"]("offpageBottom");
 			break;
 		}
 		case "changelogspage": {
@@ -243,9 +250,12 @@ e.root.style.setProperty("--font", settings.font);
 // create changelogs for the game
 async function createLogs() {
 	data.changelogs = await (await fetch("./changelogs.json")).json();
+	const date = new Date();
+	const dateformat = String(date.getMonth() + 1) + "/" + String(date.getDate()) + "/" + String(date.getFullYear());
 	for (let v of data.changelogs) {
 		for (let c of v) {
 			const node = document.createElement("p");
+			if (c.date && c.date === dateformat) node.classList.add("changelognewhighlight");
 			for (let i of c.content) {
 				const textnode = document.createTextNode(i);
 				node.appendChild(textnode);
