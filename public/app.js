@@ -213,12 +213,15 @@ e.changelogsCard.addEventListener("click", function(event) {
 });
 
 // entangle the sliders and their inputs to each other
-function entangleSlider(slider, input, storage, setting, callback = () => {}) {
+function entangleSlider(slider, input, storage, setting, step = 1, callback = () => {}) {
 	slider.addEventListener("input", function(event) {
-		input.value = slider.value;
-		localStorage.setItem(storage, slider.value);
+		input.value = Math.round(slider.value/step) * step;
 		setting = slider.value;
 		callback(setting);
+	});
+	slider.addEventListener("change", function(event) {
+		input.value = slider.value = Math.round(slider.value/step) * step;
+		localStorage.setItem(storage, slider.value);
 	});
 	input.addEventListener("input", function(event) {
 		let ifloat = parseFloat(input.value);
@@ -230,19 +233,19 @@ function entangleSlider(slider, input, storage, setting, callback = () => {}) {
 		if (ifloat > slider.max || ifloat < slider.min)
 			input.value = Math.min(Math.max(slider.min, parseFloat(input.value)), slider.max);
 		slider.value = input.value;
-		localStorage.setItem(storage, slider.value);
 		setting = slider.value;
 		callback(setting);
 	});
 	input.addEventListener("change", function(event) {
 		input.value = slider.value;
 		input.classList.remove("redtext");
+		localStorage.setItem(storage, slider.value);
 	});
 }
 
 entangleSlider(e.sfxVolumeSlider, e.sfxVolumeInput, "sfxvolume");
 entangleSlider(e.musicVolumeSlider, e.musicVolumeInput, "musicvolume");
-entangleSlider(e.transitionSlider, e.transitionInput, "transitiontime", settings.transitionTime, function(transitionTime) {
+entangleSlider(e.transitionSlider, e.transitionInput, "transitiontime", settings.transitionTime, 50, function(transitionTime) {
 	settings.transitionTime = transitionTime;
 	e.root.style.setProperty("--transition-time", `${settings.transitionTime}ms`);
 });

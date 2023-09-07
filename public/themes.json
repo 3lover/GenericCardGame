@@ -83,6 +83,14 @@
 			"--grey": "#222222",
 			"--error": "#660000"
 		},
+		"neon": {
+			"--black": "#000000",
+			"--selectblack": "#ff2200",
+			"--borderwhite": "#0000ff",
+			"--purewhite": "#00ff00",
+			"--grey": "#003300",
+			"--error": "#ff0000"
+		},
 		"eyesore": {
 			"--black": "#ffd900",
 			"--selectblack": "#f700ff",
