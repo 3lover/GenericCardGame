@@ -97,6 +97,21 @@
             "date": "9/5/2023",
             "classes": ["changelogbasic", "changelogbody"],
             "content": ["A new option was added to change the transition time when moving between and on menus"]
+        },
+
+        {
+            "date": "9/7/2023",
+            "metadata": "3rd Options Menu commit",
+            "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
+            "content": ["9/7/2023"]
+        },
+        {
+            "date": "9/7/2023",
+            "classes": ["changelogbasic", "changelogbody"],
+            "content": [
+                "- Added a lot more themes to the theme menu",
+                "- Added 2 more totally legit fonts and removed luminari"
+            ]
         }
 
     ],
