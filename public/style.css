@@ -289,6 +289,43 @@ select {
 	transform: scale(1);
 }
 
+.findericon {
+	border: 0.5vmin var(--borderwhite) solid;
+	height: 16vmin;
+	display: grid;
+	grid-template-columns: repeat(10, 10%);
+	grid-template-rows: repeat(4, 4vmin);
+}
+
+.findericonpublic {
+	grid-area: 3 / 1 / span 1 / span 1;
+	width: 6vmin;
+	height: 6vmin;
+}
+.findericoncustom {
+	grid-area: 1 / 1 / span 1 / span 1;
+	width: 6vmin;
+	height: 6vmin;
+}
+.findericontitle {
+	grid-area: 1 / 2 / span 2 / span 9;
+	color: var(--purewhite);
+	font-size: 5vmin;
+	white-space: nowrap;
+}
+.findericonplayers {
+	grid-area: 3 / 2 / span 2 / span 3;
+	color: var(--purewhite);
+	font-size: 5vmin;
+	white-space: nowrap;
+}
+.findericongame {
+	grid-area: 3 / 5 / span 2 / span 6;
+	color: var(--purewhite);
+	font-size: 5vmin;
+	white-space: nowrap;
+}
+
 /* have custom sliders */
 
 .sliderbar {
