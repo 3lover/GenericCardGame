@@ -5,10 +5,11 @@
 		"helvetica": "Helvetica, sans-serif",
 		"courier": "Courier, monospace",
 		"arialb": "arial black, sans-serif",
-		"luminari": "Luminari,fantasy",
 		"comic": "Comic Sans,cursive",
 		"verdana": "Verdana, sans-serif",
-		"brush": "Brush Script MT, cursive"
+		"brush": "Brush Script MT, cursive",
+		"delafield": "Mrs Saint Delafield, cursive",
+		"doctor": "Redacted Script, cursive"
 	},
 	"themes": {
 		"night": {
