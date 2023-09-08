@@ -34,6 +34,7 @@ const e = {
 	gameFinderBackButton: GE("gamefinderbackbutton"),
 	gameFinderTitle: GE("gamefindertitle"),
 	gameFinderFilterButton: GE("gamefinderfilterbutton"),
+	filterHolder: GE("filterholder"),
 
 	root: document.documentElement,
 }
@@ -263,6 +264,20 @@ e.fontSelector.addEventListener("change", function(event) {
 	settings.font = event.target.value;
 });
 
+// when you press the filter button on the finder menu, shrink the menu down to make way for buttons
+let filtering = false;
+e.gameFinderFilterButton.addEventListener("click", function(event) {
+	filtering = !filtering;
+	if (filtering) {
+		e.gameFinderMenu.style.height = "40vmin";
+		e.filterHolder.classList.remove("offpageBottom");
+		return;
+	}
+
+	e.gameFinderMenu.style.height = "60vmin";
+	e.filterHolder.classList.add("offpageBottom");
+});
+
 // create changelogs for the game
 async function createLogs() {
 	data.changelogs = await (await fetch("./changelogs.json")).json();
@@ -271,7 +286,7 @@ async function createLogs() {
 	for (let v of data.changelogs) {
 		for (let c of v) {
 			const node = document.createElement("p");
-			if (c.date && c.date === dateformat) node.classList.add("changelognewhighlight");
+			if (c.date && c.date === dateformat) node.classList.add("highlight");
 			for (let i of c.content) {
 				const textnode = document.createTextNode(i);
 				node.appendChild(textnode);

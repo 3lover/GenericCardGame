@@ -190,7 +190,7 @@ select {
 .changelogtoplinedotted {
 	border-top: 0.25vmin var(--borderwhite) dotted;
 }
-.changelognewhighlight {
+.highlight {
 	background-color: var(--grey);
 }
 
@@ -268,6 +268,8 @@ select {
 
 .gamefindermenu {
 	grid-area: 4 / 2 / span 6 / span 10;
+	height: 60vmin;
+	transition: height var(--transition-time), transform var(--transition-time);
 	border-style: solid;
 	border-color: var(--borderwhite);
 	border-width: 0.5vmin 0 0.5vmin 0;
@@ -325,6 +327,14 @@ select {
 	font-size: 5vmin;
 	white-space: nowrap;
 }
+
+.filterholder {
+	grid-area: 8 / 2 / span 2 / span 10;
+	border: 0.5vmin var(--borderwhite) solid;
+	border-top: 0;
+}
+
+.filter
 
 /* have custom sliders */
 
