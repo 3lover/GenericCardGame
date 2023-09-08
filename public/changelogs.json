@@ -61,6 +61,20 @@
                 "- The lobby's current and max player count",
                 "- The name of the game the lobby is playing"
 			]
+        },
+
+        {
+            "date": "9/8/2023",
+            "metadata": "3rd Game Finder commit",
+            "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
+            "content": ["9/8/2023"]
+        },
+        {
+            "date": "9/8/2023",
+            "classes": ["changelogbasic", "changelogbody"],
+            "content": [
+				"The filter button now has an animation to open a filter section, that will later be able to filter lobbies"
+			]
         }
     ],
     [
