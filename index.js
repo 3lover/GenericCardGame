@@ -65,5 +65,32 @@ const express = require('express');
 const app = express();
 app.use(express.static("./public"));
 app.listen(port, function () {
-  console.log(`Express app listening on port ${port}!`)
+  console.log(`Express app listening on port ${port}!`);
 });
+
+// intialize our websocket protocol
+
+// when a lobby is made, it is stored in here
+const lobbies = [];
+
+class lobby {
+  constructor(data = {}) {
+    this.sockets = [];
+    this.objects = [];
+    this.password = "";
+    this.name = "Unnamed Lobby";
+    this.public = false;
+    this.custom = false;
+    this.gamename = "Unknown Game";
+    this.lobbycolor = "#ff0000";
+  }
+}
+
+// eventually
+const eventuallySendThis = {
+  event: "updateRoom",
+  updateid: 1234,
+  objectdata: [
+    {}
+  ],
+}

@@ -92,6 +92,22 @@
 			"--grey": "#003300",
 			"--error": "#ff0000"
 		},
+		"ocean": {
+			"--black": "#111144",
+			"--selectblack": "#000033",
+			"--borderwhite": "#333377",
+			"--purewhite": "#444488",
+			"--grey": "#222244",
+			"--error": "#0000ff"
+		},
+		"hell": {
+			"--black": "#660000",
+			"--selectblack": "#880000",
+			"--borderwhite": "#220000",
+			"--purewhite": "#000000",
+			"--grey": "#440000",
+			"--error": "#ffffff"
+		},
 		"eyesore": {
 			"--black": "#ffd900",
 			"--selectblack": "#f700ff",
