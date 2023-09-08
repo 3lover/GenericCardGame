@@ -334,8 +334,17 @@ select {
 	border-top: 0;
 }
 
-.filter {
-	
+.filtersearchtext {
+	width: 50vmin;
+	text-align: center;
+	color: var(--purewhite);
+}
+.filtersearch {
+	margin-left: 5vmin;
+	width: 40vmin;
+	background-color: var(--black);
+	border: 0.5vmin var(--borderwhite) solid;
+	color: var(--purewhite);
 }
 
 /* have custom sliders */

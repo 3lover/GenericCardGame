@@ -158,6 +158,11 @@ function transition(type, state, removeHistory = false) {
 			e.gameFinderTitle.classList[state ? "remove" : "add"]("offpageTop");
 			e.gameFinderMenu.classList[state ? "remove" : "add"]("offpageBottom");
 			e.gameFinderFilterButton.classList[state ? "remove" : "add"]("slightOffpageTop");
+			if (!state) {
+				e.gameFinderMenu.style.height = "60vmin";
+				e.filterHolder.classList.add("offpageBottom");
+				filtering = false;
+			}
 			break;
 		}
 		case "changelogspage": {
@@ -290,7 +295,7 @@ async function createLogs() {
 			for (let i of c.content) {
 				const textnode = document.createTextNode(i);
 				node.appendChild(textnode);
-				node.appendChild(document.createElement("br"))
+				node.appendChild(document.createElement("br"));
 			}
 			for (let i of c.classes) {
 				node.classList.add(i);
