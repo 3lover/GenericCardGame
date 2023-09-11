@@ -3,21 +3,21 @@
         {
             "metadata": "Summary Section",
             "classes": ["changelogbasic", "changelogheader", "changelogtopline"],
-            "content": ["General Changes"]
+            "content": ["Latest Log Summary"]
         },
 
         {
-            "date": "9/6/2023",
+            "date": "9/8/2023",
             "metadata": "1st general change",
             "classes": ["changelogbasic", "changelogbody", "changelogbold", "changelogtoplinedotted"],
-            "content": ["9/6/2023"]
+            "content": ["9/8/2023"]
         },
         {
-            "date": "9/6/2023",
+            "date": "9/8/2023",
             "classes": ["changelogbasic", "changelogbody"],
             "content": [
-				"- Worked on the bare bones of the game finder",
-				"- Fixed a bug with back buttons being clicked twice crashing the game"
+                "- Added a filter button and filter menu to the game. Currently just a representation",
+                "- Next step will be adding websockets between the client and server, in order to create and find lobbies"
 			]
         }
     ],
